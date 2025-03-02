@@ -1,6 +1,6 @@
 
-                    template_version = "v5"
-                    image_id = "aa4ad3d8-8241-4e5f-b479-e158f8722ab2"
+                    template_version = "v2"
+                    image_id = "b4165541-51fa-485d-8466-db95aa7e00ac"
                     flavor_id = "s6.small.1"
                     key_name = "KeyPair-best"
                     desired_capacity = 2

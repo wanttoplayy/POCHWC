@@ -66,7 +66,7 @@ class ASGUpdater:
                 print("Removal request sent successfully")
                 
                 print("Waiting for instances to be removed...")
-                # time.sleep(120)
+                time.sleep(45)
 
             # Reset group capacity to original values
             print("\nResetting group capacity...")
@@ -83,7 +83,7 @@ class ASGUpdater:
             
             # Wait for new instances
             print("Waiting for new instances to be created...")
-            # time.sleep(180)
+            time.sleep(60)
             
             # Check new instances
             new_instances = self.get_instance_list(group_id)
@@ -131,10 +131,10 @@ class ASGUpdater:
             subprocess.run(["terraform", "apply", "-auto-approve"], check=True)
             
             print("\nStarting instance refresh process...")
-            self.force_instance_refresh("59f18876-732a-44f9-9269-fcbbd3f65b4a")
+            self.force_instance_refresh("bdf403d1-3e76-4cb5-8fb2-e95a81aa2839")
             
             # print("\nWaiting for cool down period...")
-            # time.sleep(300)
+            time.sleep(60)
             
             print("\n=== Update Process Completed Successfully! ===")
             
@@ -149,6 +149,6 @@ if __name__ == "__main__":
     print("\n=== Auto Scaling Group Update Tool ===")
     updater = ASGUpdater()
     updater.apply_new_configuration(
-        new_image_id="aa4ad3d8-8241-4e5f-b479-e158f8722ab2",
-        template_version="v5"
+        new_image_id="b4165541-51fa-485d-8466-db95aa7e00ac",
+        template_version="v2"
     )
